@@ -1,0 +1,37 @@
+@use "../utils/variables" as v;
+@use "../utils/functions" as f;
+
+.tasks-list {
+    height: 450px;
+    overflow-y: auto;
+}
+
+.task-list__item {
+    padding: 5px 13px;
+    margin-bottom: 12px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.item-text {
+    display:inline-block;
+    width: 85%;
+
+    &--through {
+        text-decoration: line-through;
+        user-select: none;
+    }
+}
+
+.list-info {
+    display: grid;
+    place-items: center;
+}
+
+.task-done {
+    opacity: 70%;
+}

@@ -1,0 +1,24 @@
+@use "../utils/variables" as v;
+@use "../utils/functions" as f;
+
+
+
+.profile {
+
+    &-header {
+        padding-right: 8px;
+        width: 100%;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    &-info {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.name-container {
+    width: 100%;
+    max-width: 360px;
+}   

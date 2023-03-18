@@ -1,0 +1,42 @@
+
+    @use '../utils/variables' as v;
+    @use '../utils/functions' as f;
+
+    .icon {
+        pointer-events: none;
+
+        // &--sparkle {
+        //     width: 55px;
+        //     position: absolute;
+        //     top: -10px;
+        //     right: -45px;
+        //     filter: invert(38%) sepia(66%) saturate(4670%) hue-rotate(302deg) brightness(102%) contrast(102%);
+        //     clip-path: polygon(15px 10px, 70.66% 10px, 71.19% 62.92%, 29.50% 62.72%);
+        // }
+
+        &--empty {
+            width: 70px;
+            margin-top: 120px;
+            margin-bottom: 5px;
+            filter: invert(1) opacity(70%);
+        }
+    }
+
+    .icon-star-blink {
+        position: relative;
+        width: max-content;
+
+        &::before {
+            z-index: 0;
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -50px;
+            width: 55px;
+            height: 55px;
+            background-image: url("../assets/icons/sparkle-two.svg");
+            background-size: cover;
+            filter: invert(38%) sepia(66%) saturate(4670%) hue-rotate(302deg) brightness(102%) contrast(102%);
+            clip-path: polygon(15px 10px, 70.66% 10px, 71.19% 62.92%, 29.50% 62.72%);
+        }
+    }

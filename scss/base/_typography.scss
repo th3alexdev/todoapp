@@ -1,0 +1,124 @@
+
+    @use '../utils/variables' as v;
+    @use '../utils/functions' as f;
+
+
+
+    html {
+        font-size: 16px;
+    }
+
+    .title {
+        &--bold {
+            text-transform: uppercase;
+            font-size: 1.9rem;
+            font-weight: 600;
+        }
+    }
+
+    .text {
+        display: inline-block;
+
+        &--secondary {
+            font-size:2.8rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+        }
+
+        &--primary {
+            position: relative;
+            max-width: 360px;
+            margin-bottom: -5px;
+            font-family: "Space Grotesk", sans-serif;
+            font-weight: 700;
+            font-size: 4rem;
+            direction: ltr;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+
+        &--big {
+            height: 45px;
+            line-height: 45px;
+            font-size: 3.2rem;
+            font-weight: 700;
+        }
+        
+        &--small {
+            font-size: 1rem;
+        }
+
+        &--empty {
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            color: rgb(193, 193, 193);
+            font-size: 1.3rem;
+            font-weight: 800;
+            font-family: monospace;
+            user-select: none;
+        }
+
+        &--dev-regular {
+            color: #222;
+            font-size: .8rem;
+            font-weight: 800;
+        }
+        &--dev-user {
+            color: #222;
+            font-size: .8rem;
+        }
+    }
+
+    .fulldate {
+        margin-bottom: 45px;
+        font-size: .8rem;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        filter: opacity(66%);
+        display:flex;
+        gap: 5px;
+
+        &-wday { 
+            font-weight: 700;
+        }
+    }
+
+    .stranger {
+        position: relative;
+        filter: opacity(95%);
+    }
+
+
+
+    .text--primary:focus {
+        position: relative;
+        outline: none;
+        border: none;
+
+        &::before {
+            position: absolute;
+            content: "";
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: blueviolet;
+            animation-name: blinker;
+            animation-duration: .8s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+        }
+    }
+
+    @keyframes blinker {
+        0% {
+            filter: opacity(0%);
+        }
+        100% {
+            filter: opacity(100%);
+
+        }
+    }

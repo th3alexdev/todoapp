@@ -1,0 +1,20 @@
+@use "../utils/variables" as v;
+@use "../utils/functions" as f;
+
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 50%;
+    flex-basis: 350px;
+    @media (min-width: 400px)  {
+        flex-basis: 200px;
+    }
+    padding: 25px 20px;
+    outline: 1px solid #fff;
+    flex-grow: 1;
+    
+}
+// .box { width: 50%; max-width: 200px; flex-basis: 350px; padding: 25px 20px; outline: 1px solid #fff; flex-grow: 1; }

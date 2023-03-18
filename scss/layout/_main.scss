@@ -1,0 +1,32 @@
+@use "../utils/variables" as v;
+@use "../utils/functions" as f;
+
+.hidden {
+    display: none;
+}
+
+.main {
+    width: 100%;
+    padding: 90px 8px 80px 8px;
+    @media (min-width: 500px)  {
+        padding: 75px 0 125px 0;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.td-app {
+    position:relative;
+    width: 100%;
+    min-width: 200px;
+    max-width: 460px;
+    min-height: 680px;
+    
+    // max-height: 900px;
+    max-height: 680px;
+    padding: 44px 30px;
+    outline: v.$outline;
+    border-radius: 8px;
+}

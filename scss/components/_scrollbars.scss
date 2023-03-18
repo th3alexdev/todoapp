@@ -1,0 +1,17 @@
+@use "../utils/variables" as v;
+@use "../utils/functions" as f;
+
+::-webkit-scrollbar {
+    background-color: f.getColor('bg-color');
+    width: 6px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+  background-color: f.getColor('bg-color');
+}
+   
+::-webkit-scrollbar-thumb {
+  background-color: f.getColor('scrollbar');
+}

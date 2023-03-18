@@ -1,2 +1,18 @@
 
-    @forward 'base/base'
+    @forward 'base/base';
+    @forward 'base/typography';
+
+    @forward 'layout/main';
+    @forward 'components/loader';
+    @forward 'components/inputs';
+    @forward 'components/buttons';
+    @forward 'components/shapes';
+    @forward 'components/taskslist';
+    @forward 'components/flex-displays';
+    @forward 'components/tabs';
+    @forward 'components/icons';
+    @forward 'components/boxes';
+    @forward 'components/scrollbars';
+    @forward 'components/dev';
+    @forward 'pages/tasks';
+    @forward 'pages/profile';

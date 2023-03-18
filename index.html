@@ -4,45 +4,134 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task List by AleKs</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>To Do by Alex 📝</title>
+
+    <script src="https://kit.fontawesome.com/bc13bbd577.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- css -->
+    <link rel="stylesheet" href="/css/styles.min.css">
 </head>
 <body>
-    <main class="main">
-        <section class="app-container">
-            <div class="task-header">
+    <div id="loader" class="loader-bg">
+        <div class="loader-container">
+            <div class="loader"></div>
+        </div>
+    </div>
+    <main id="main" class="main">
+        <section class="td-app">
+            <nav class="tabs-nav">
+                <ul class="tabs" id="tabs">
+                    <li class="tabs__li"><a href="#profile" id="tabProfile" class="tab unselected link-tab">Profile</a></li>
+                    <li class="tabs__li"><a href="#tasks" id="tabTasks" class="tab selected link-tab">Tasks</a></li>
+                </ul>
+            </nav>
 
-                <div class="task-date">
-                    <p class="task-date__day">19</p>
-
-                    <div class="task-date-full">
-                    <p class="task-date-full__month">Feb</p>
-                    <p class="task-date-full__year">2023</p>
-                        
+            <div id="tasks" class="tasks ">
+                <div class="tasks-header">
+                    <div class="flex-el ">
+                        <p id="date" class="text--big"></p>
+                        <div class="flex-el__secondary flex-date">
+                            <span id="month" class="text text--small"></span>
+                            <span id="year" class="text text--small"></span>
+                        </div>
                     </div>
-
-                    <p class="task-date__w-day">Tuesday</p>
-
+                    <p id="day" class="title title--bold date__w-day shape-w-day"></p>
                 </div>
 
+                <div class="td-input-div">
+                    <input id="taskInput" type="text" class="td-input"  placeholder="Enter a task">
+                    <!-- <i id="addTask" class="fa-sharp fa-solid fa-plus btn btn--add-task"></i> -->
+                    <!-- <i class="fa-sharp fa-solid fa-plus"></i> -->
+                    <img id="addTask" src="assets/icons/add-icon.svg" alt="add task button" class="btn btn--add-task">
+                </div>
+                <div class="shape-hr"></div>
+                <div class="td-list-div">
+                    <div id="tasksInfo">
+                        <div class="list-info">
+                            <img src="/assets/icons/empty.png" alt="Empty icon" class="icon icon--empty">
+                            <p class="text text--empty">The list is empty</p>
+                        </div>
+                    </div>
+                    <ul id="tasksList" class="tasks-list">
+                    </ul>
+                </div>
+            </div>
 
+            <div id="profile" class="profile hidden">
+                <div class="profile-header">
+                    <img id="wand" src="assets/icons/wand.svg" alt="wand to edit the name" class="btn btn--wand">
+                </div>
+                <div class="profile-info">
+                    <h2 class="text text--secondary shape-hello">Hello,</h2>
+                    <div class="name-container">
+                        <div class="icon-star-blink">
+                            <h1 id="name" spellcheck="false" contenteditable="false" class="text text--primary"></h1>
+                        </div>
+                    </div>
+                    <div class="fulldate">
+                        <p id="wDay" class="date-wday"></p>
+                        <p id="longDate" class="date"></p>
+                    </div>
 
+                </div>
+                <div class="profile-stats">
+                    <div class="boxes">
+                        <div class="box box-stats">
+                            <div class="flex-el ">
+                                <p id="createdTasks" class="text--big"></p>
+                                <div class="flex-el__secondary flex-box">
+                                    <span class="text text--small">Created Tasks</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box-stats">
+                            <div class="flex-el ">
+                                <p id="doneTasks" class="text--big"></p>
+                                <div class="flex-el__secondary flex-box">
+                                    <span class="text text--small">Completed Tasks</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="task-input">
-                <input type="text" class="task-input">
-                <button class="btn btn--add-task">+</button>
-            </div>
-            <div class="task-container">
-                <ul class="tasklist">
-                    <li class="tasklist__item">Buy a coffee</li>
-                    <li class="tasklist__item">Make a task list app</li>
-                    <li class="tasklist__item">Study for the exam</li>
-                    <li class="tasklist__item">Learn more about React</li>
-                    <li class="tasklist__item">Be Happy</li>
-                </ul>
-            </div>
+
+            <section class="dev">
+                <div class="dev-pic-container">
+                    <img src="https://avatars.githubusercontent.com/u/55007470?v=4" alt="Alex Github profile image" class="img img--dev">
+                </div>
+                <div class="dev-info-container">
+                    <div class="dev-info"><p class="text text--dev-regular">DEV</p></div>
+                    <div class="dev-user"><p class="text text--dev-user"><a target="_blank" href="https://github.com/th3AleKs">@th3alexdev</a></p></div>
+                </div>
+            </section>
         </section>
     </main>
-    <script src="js/index.js"></script>
+    <script src="js/changeTab.js"></script>
+    <script type="module" src="js/tasksApp.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>

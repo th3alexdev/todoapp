@@ -1,0 +1,41 @@
+@use "../utils/variables" as v;
+@use "../utils/functions" as f;
+
+.flex-el {
+    width: max-content;
+    height: 45px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+
+
+    &__secondary {
+        width: max-content;
+        margin-left: 6px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 5px;
+    }
+}
+
+.flex-date {
+    line-height: 10px;
+    
+    :last-child {
+        height: 13px;
+        font-size: .8rem;
+    }
+}
+
+.flex-box {
+    width: 85px;
+    margin-left: 15px;
+    line-height: 15px;
+    text-align: left;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+}

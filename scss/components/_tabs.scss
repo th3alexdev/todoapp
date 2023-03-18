@@ -1,0 +1,79 @@
+@use "../utils/variables" as v;
+@use "../utils/functions" as f;
+
+.tabs-nav {
+    position: absolute;
+    z-index: 100;
+    top: -47px;
+    left: 8px;
+    
+    @media (min-width: 620px)  {
+        top: 125px;
+        left: -151.6px;
+        transform: rotate(-90deg) translateY(-3px);
+    }
+
+}
+
+.tabs {
+    z-index: 20;
+    position: relative;
+    height: inherit;
+    display: flex;
+    flex-wrap: wrap;
+
+    transform: translateY(2px) translateX(-10px);
+
+    li:first-of-type {
+        position: relative;
+        z-index: 10;
+        transform: translateX(35px) ;
+    }
+
+    &__li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.link-tab {
+    width: 130px;
+    padding: 12px 44px;
+    // clip-path: polygon(calc(10% + 0px) 0px, calc(90% - 0px) 0px, 157px 100.00%, 2px 100%);
+    clip-path: polygon(14px 0px, 114px 0px, 129px 106.69%, 0px 106.7%);
+    background-size: 95%;
+    background-position: center 1px;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.selected {
+    position: relative;
+    z-index: 50;
+    // background-image: url("./assets/svg/tab-bg.svg");
+    background-image: url("../assets/svg/tab-bg.svg");
+    
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 122px;
+        height: 3px;
+        transform: translateY(23px);
+        background: f.getColor('bg-color');
+
+        @media (min-width: 620px)  {
+            transform: translateY(23.5px);
+        }
+    }
+}
+
+.unselected {
+    background-image: url("../assets/svg/tab-bg-default.svg");
+
+}

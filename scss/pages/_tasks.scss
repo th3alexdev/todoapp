@@ -1,0 +1,16 @@
+@use "../utils/variables" as v;
+@use "../utils/functions" as f;
+
+.tasks {
+    position: relative;
+    margin: 0 auto;
+    
+    &-header {
+        width: 100%;
+        margin-bottom: 22px;
+        padding: 0 6px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
